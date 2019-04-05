@@ -1,0 +1,28 @@
+include ./common/_mixins
+block variables
+  - var pageClass = ''
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    
+    <title>Старт</title>
+    <meta name="description" content="">
+
+    <meta name="theme-color" content="#ffffff">
+    
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+    link(rel='stylesheet' href='main.min.css')
+  body(class= pageClass)
+    .wrapper
+      +mobile_menu
+      include ./common/header.pug
+      block content
+      include ./common/footer.pug
+
+    block scripts
+    

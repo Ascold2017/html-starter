@@ -1,0 +1,24 @@
+mixin icon(iconName, iconClass)
+	svg(class=`${iconClass}`)
+		use(xlink:href=`./assets/images/icons/sprite.svg#${iconName}`)
+
+mixin hamburger
+	a(href="#")#hamburger.hamburger
+		span.hamburger__span
+		span.hamburger__span.deleted
+		span.hamburger__span
+
+mixin mobile_menu
+	-
+		var links = [
+			{ title: 'возможности', href: '#opportunities' },
+			{ title: 'решения', href:'#features' },
+			{ title: 'инструменты', href: '#instruments' },
+			{ title: 'контакты', href: '#isobr' }
+		]
+	nav(class="mobile-menu", id="mobile-menu")
+
+		ul(class="mobile-menu__list")
+			each item in links
+				li(class="mobile-menu__item")
+					a(href=item.href  class="mobile-menu__link")= item.title
